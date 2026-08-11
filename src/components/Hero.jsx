@@ -6,111 +6,83 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      {/* Background Graphic Rings & 24-Spoke Ashoka Chakra Motif */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-        {/* Outer Orbital Rings */}
-        <div className="w-[600px] h-[600px] sm:w-[900px] sm:h-[900px] border border-tiranga-saffron/30 rounded-full animate-orbit" />
-        <div className="absolute w-[400px] h-[400px] sm:w-[650px] sm:h-[650px] border border-dashed border-tiranga-greenGlow/30 rounded-full animate-orbit" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
-
-        {/* 24-Spoke Ashoka Chakra Center Graphic */}
-        <div className="absolute w-80 h-80 sm:w-[480px] sm:h-[480px] rounded-full border-2 border-tiranga-chakraLight/30 animate-spin-slow flex items-center justify-center">
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-tiranga-chakraLight/40 to-transparent"
-              style={{ transform: `rotate(${i * 15}deg)` }}
-            />
-          ))}
-        </div>
-
-        <div className="absolute w-72 h-72 sm:w-[450px] sm:h-[450px] bg-gradient-to-tr from-tiranga-saffron/10 via-white/5 to-tiranga-greenGlow/10 rounded-full blur-3xl" />
+      {/* 1. Large Right-Side Ashoka Chakra Overlay (Identical to Reference Image 2) */}
+      <div className="absolute right-[-20%] sm:right-[-10%] lg:right-[-5%] top-1/2 -translate-y-1/2 w-[550px] h-[550px] sm:w-[750px] sm:h-[750px] lg:w-[920px] lg:h-[920px] pointer-events-none opacity-25 z-0">
+        <svg viewBox="0 0 100 100" className="w-full h-full text-blue-400 animate-spin-slow">
+          {/* Outer Dual Circles */}
+          <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" strokeWidth="0.8" />
+          <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="1 2" />
+          {/* Center Hub */}
+          <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="1" />
+          <circle cx="50" cy="50" r="3" fill="currentColor" />
+          {/* 24 Radial Spokes */}
+          {Array.from({ length: 24 }).map((_, i) => {
+            const angle = (i * 15 * Math.PI) / 180;
+            const x1 = 50 + 10 * Math.cos(angle);
+            const y1 = 50 + 10 * Math.sin(angle);
+            const x2 = 50 + 47 * Math.cos(angle);
+            const y2 = 50 + 47 * Math.sin(angle);
+            return (
+              <line
+                key={i}
+                x1={x1}
+                y1={y1}
+                x2={x2}
+                y2={y2}
+                stroke="currentColor"
+                strokeWidth="0.6"
+              />
+            );
+          })}
+        </svg>
       </div>
 
-      <div className="relative max-w-5xl mx-auto text-center z-10">
-        {/* Tiranga National Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-space-850/90 border border-tiranga-saffron/40 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-8 shadow-saffron-glow backdrop-blur-md">
-          <span className="text-base">🇮🇳</span>
-          <span className="text-gradient-tiranga">BHARAT IN SPACE • ISRO MISSIONS & BEYOND</span>
+      {/* 2. Top-Left Saffron & Green Ambient Glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-tiranga-saffron/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/3 w-96 h-96 bg-tiranga-greenGlow/15 rounded-full blur-[120px] pointer-events-none" />
+
+      {/* Hero Content Container */}
+      <div className="relative max-w-6xl mx-auto w-full z-10">
+        {/* Top Gold Pill Badge (Matching Image 2 Badge Style) */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase mb-8 shadow-saffron-glow backdrop-blur-md">
+          <span className="text-tiranga-saffron">IN</span>
+          <span>THEMATIC WEBSITE DEVELOPMENT COMPETITION 2026</span>
         </div>
 
-        {/* Main Heading in Exact Indian Tiranga Colors (Saffron - White - Green) */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 font-sans leading-[1.15]">
-          <span className="text-tiranga-saffron drop-shadow-[0_0_25px_rgba(255,103,31,0.7)]">India's</span>{' '}
-          <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Journey to the</span>{' '}
-          <span className="text-tiranga-greenGlow drop-shadow-[0_0_25px_rgba(16,185,129,0.7)] relative inline-block">
+        {/* Main Heading in Exact Colors & Structure as Image 2 */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 font-serif sm:font-sans leading-[1.12]">
+          <span className="block text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+            India's
+          </span>
+          <span className="block text-tiranga-saffron drop-shadow-[0_0_30px_rgba(255,103,31,0.8)]">
+            Journey to the —
+          </span>
+          <span className="block text-tiranga-greenGlow drop-shadow-[0_0_30px_rgba(16,185,129,0.8)]">
             Stars
-            <svg
-              className="absolute -bottom-2 left-0 w-full h-3 text-tiranga-greenGlow opacity-90"
-              viewBox="0 0 100 20"
-              preserveAspectRatio="none"
-            >
-              <path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" strokeWidth="4" />
-            </svg>
           </span>
         </h1>
 
         {/* Subtitle / Tagline */}
-        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+        <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
           {HERO_DATA.tagline}
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Action Buttons (Matching Image 2 Button Style) */}
+        <div className="flex flex-col sm:flex-row items-center gap-4">
           <a
             href="#timeline"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold rounded-2xl text-space-950 bg-gradient-to-r from-tiranga-saffron via-amber-400 to-tiranga-greenGlow hover:opacity-95 shadow-saffron-glow transition-all duration-300 transform hover:-translate-y-1"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold rounded-xl text-white bg-[#FF671F] hover:bg-orange-600 shadow-saffron-glow transition-all duration-300 transform hover:-translate-y-0.5"
           >
-            <Rocket className="w-5 h-5 text-space-950" />
-            Explore Mission Timeline
+            Explore Mission Timeline →
           </a>
           <a
             href="#vision2047"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold rounded-2xl text-white bg-space-850 hover:bg-space-800 border border-tiranga-greenGlow/50 hover:border-tiranga-greenGlow shadow-green-glow transition-all duration-300 transform hover:-translate-y-1"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium rounded-xl text-slate-200 bg-[#101B33]/90 hover:bg-[#1A243B] border border-slate-700/80 transition-all duration-300 transform hover:-translate-y-0.5"
           >
-            <Orbit className="w-5 h-5 text-tiranga-greenGlow" />
             Vision 2047 Objectives
           </a>
-        </div>
-
-        {/* Independence Day Special Ashoka Chakra Emblem under Explore Mission Timeline */}
-        <div className="mt-12 flex flex-col items-center justify-center animate-float">
-          <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
-            {/* Outer Tiranga Tricolor Rotating Ring */}
-            <div className="absolute inset-0 rounded-full p-1.5 bg-gradient-to-tr from-tiranga-saffron via-white to-tiranga-greenGlow shadow-saffron-glow animate-spin-slow opacity-95" />
-            <div className="absolute inset-2.5 rounded-full bg-space-950/95 backdrop-blur-md flex items-center justify-center border border-space-700 shadow-inner">
-              {/* 24-Spoked Ashoka Chakra SVG Emblem */}
-              <svg className="w-24 h-24 sm:w-28 sm:h-28 text-tiranga-chakraLight animate-spin-slow" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#2563EB" strokeWidth="2.5" />
-                <circle cx="50" cy="50" r="8" fill="none" stroke="#2563EB" strokeWidth="2" />
-                <circle cx="50" cy="50" r="3" fill="#2563EB" />
-                {Array.from({ length: 24 }).map((_, i) => {
-                  const angle = (i * 15 * Math.PI) / 180;
-                  const x1 = 50 + 8 * Math.cos(angle);
-                  const y1 = 50 + 8 * Math.sin(angle);
-                  const x2 = 50 + 45 * Math.cos(angle);
-                  const y2 = 50 + 45 * Math.sin(angle);
-                  return (
-                    <line
-                      key={i}
-                      x1={x1}
-                      y1={y1}
-                      x2={x2}
-                      y2={y2}
-                      stroke="#2563EB"
-                      strokeWidth="1.5"
-                    />
-                  );
-                })}
-              </svg>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center gap-2 px-4 py-1.5 rounded-full bg-space-850/90 border border-tiranga-saffron/40 text-xs font-black uppercase text-white shadow-saffron-glow backdrop-blur-md">
-            <span className="text-tiranga-saffron font-black">24-SPOKED</span>
-            <span className="text-white">ASHOKA CHAKRA</span>
-            <span className="text-tiranga-greenGlow font-black">• INDEPENDENCE DAY SPECIAL 🇮🇳</span>
-          </div>
         </div>
       </div>
 
@@ -118,7 +90,7 @@ export default function Hero() {
       <a
         href="#stats"
         aria-label="Scroll to Statistics section"
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 p-2 rounded-full bg-space-850 border border-space-700 text-slate-400 hover:text-cyan-accent hover:border-cyan-accent transition-all duration-300 animate-bounce"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 p-2.5 rounded-full bg-space-850 border border-space-700 text-slate-400 hover:text-tiranga-saffron hover:border-tiranga-saffron transition-all duration-300 animate-bounce z-10"
       >
         <ChevronDown className="w-5 h-5" />
       </a>
