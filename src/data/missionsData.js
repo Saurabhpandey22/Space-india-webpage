@@ -1,5 +1,5 @@
 export const HERO_DATA = {
-  badge: "NATIONAL HACKATHON 2026 • CODE FOR THE NATION",
+  badge: "🇮🇳 BHARAT IN SPACE • ISRO MISSIONS & BEYOND",
   title: "India's Journey to the Stars",
   tagline: "Celebrating ISRO's legendary milestones, cutting-edge space technology, and India's vision for deep space exploration.",
   institute: "Dr. Virendra Swarup Institute of Computer Studies",
@@ -11,7 +11,7 @@ export const STATS_DATA = [
     number: "4th",
     label: "Nation to Soft-Land on Moon",
     sublabel: "1st Ever to Reach Lunar South Pole",
-    accent: "gold",
+    accent: "saffron",
     icon: "Moon",
   },
   {
@@ -19,7 +19,7 @@ export const STATS_DATA = [
     number: "120+",
     label: "Indian Missions Executed",
     sublabel: "Including Communication, Earth & Deep Space",
-    accent: "cyan",
+    accent: "green",
     icon: "Rocket",
   },
   {
@@ -27,7 +27,7 @@ export const STATS_DATA = [
     number: "1st",
     label: "Asian Nation to Reach Mars",
     sublabel: "Achieved on the very first attempt (MOM)",
-    accent: "gold",
+    accent: "chakra",
     icon: "Globe",
   },
   {
@@ -35,7 +35,7 @@ export const STATS_DATA = [
     number: "430+",
     label: "Foreign Satellites Launched",
     sublabel: "For 34+ nations via Commercial Wings",
-    accent: "cyan",
+    accent: "saffron",
     icon: "Satellite",
   },
 ];
@@ -52,7 +52,7 @@ export const TIMELINE_MISSIONS = [
     description: "Named after the famed 5th-century Indian astronomer, Aryabhata marked India's inaugural entry into space technology. Built entirely in India, it conducted astrophysics and solar physics research.",
     achievement: "Laid the foundation for indigenous satellite manufacturing in India.",
     keySpecs: ["Weight: 360 kg", "Power: Solar panels (46W)", "Orbit: Low Earth Orbit"],
-    accent: "gold",
+    accent: "saffron",
     status: "Completed",
   },
   {
@@ -66,7 +66,7 @@ export const TIMELINE_MISSIONS = [
     description: "Under the project directorship of Dr. A.P.J. Abdul Kalam, India launched the Rohini RS-1 satellite into orbit using the indigenous SLV-3 rocket, joining an elite group of spacefaring nations.",
     achievement: "Made India the 6th nation capable of putting satellites into orbit natively.",
     keySpecs: ["Payload: 35 kg", "Rocket Height: 22m", "Project Director: Dr. A.P.J. Abdul Kalam"],
-    accent: "cyan",
+    accent: "green",
     status: "Completed",
   },
   {
@@ -80,7 +80,7 @@ export const TIMELINE_MISSIONS = [
     description: "India's maiden deep space mission to the Moon. The Moon Impact Probe (MIP) payload discovered water molecules (H2O & OH) on the lunar surface, reshaping global planetary science.",
     achievement: "Globally recognized for confirming water molecules on Moon's surface.",
     keySpecs: ["Payloads: 11 Scientific Instruments", "Orbit: 100km Lunar Orbit", "MIP Impact: Shackleton Crater"],
-    accent: "cyan",
+    accent: "chakra",
     status: "Completed",
   },
   {
@@ -94,7 +94,7 @@ export const TIMELINE_MISSIONS = [
     description: "Mars Orbiter Mission placed India into Mars orbit on September 24, 2014 on its first try, at a fraction of NASA's budget ($74 million), setting a world record for cost efficiency.",
     achievement: "1st attempt success & lowest cost interplanetary mission in history.",
     keySpecs: ["Cost: ~$74M", "Travel Distance: 666 Million KM", "Lifespan: Served 8 years (Planned: 6 months)"],
-    accent: "gold",
+    accent: "saffron",
     status: "Completed",
   },
   {
@@ -108,7 +108,7 @@ export const TIMELINE_MISSIONS = [
     description: "The Vikram lander and Pragyan rover successfully soft-landed near the unexplored lunar south pole. India became the 4th country to land on the Moon and the 1st ever at the South Pole.",
     achievement: "First nation in human history to land near the Lunar South Pole.",
     keySpecs: ["Lander: Vikram", "Rover: Pragyan", "Key Discovery: Sulphur detected in South Pole soil"],
-    accent: "gold",
+    accent: "green",
     status: "Completed",
   },
   {
@@ -122,7 +122,7 @@ export const TIMELINE_MISSIONS = [
     description: "Placed in a halo orbit around the Sun-Earth Lagrange Point 1 (L1), 1.5 million km from Earth, to observe the solar corona, solar wind, and coronal mass ejections continuously.",
     achievement: "Provides uninterrupted view of the Sun without eclipses or occultation.",
     keySpecs: ["Location: Sun-Earth L1 Point (1.5M km)", "Payloads: 7 indigenous payloads", "Objective: Space weather forecasting"],
-    accent: "cyan",
+    accent: "saffron",
     status: "Active",
   },
   {
@@ -136,7 +136,7 @@ export const TIMELINE_MISSIONS = [
     description: "Gaganyaan will send a 3-member crew into a 400 km low Earth orbit for 3 days and return them safely with a splashdown in Indian ocean waters, marking India's entry into human spaceflight.",
     achievement: "Will make India the 4th nation to launch human spaceflight independently.",
     keySpecs: ["Crew: 3 Astronauts (Gaganauts)", "Orbit: 400 km LEO", "Human-Rated Rocket: HLVM3"],
-    accent: "cyan",
+    accent: "chakra",
     status: "Upcoming",
   },
 ];
@@ -145,7 +145,7 @@ export const GALLERY_CARDS = [
   {
     id: "c3-card",
     title: "Chandrayaan-3",
-    badge: "HISTORIC LUNAR SOUTHOLE",
+    badge: "HISTORIC LUNAR SOUTH POLE",
     tagline: "Unlocking Lunar Secrets at the South Pole",
     description: "Equipped with Pragyan Rover's Laser-Induced Breakdown Spectroscope (LIBS), Chandrayaan-3 proved the presence of Sulphur, Aluminium, Iron, and Titanium in lunar soil.",
     imageText: "Lunar Lander & Rover Mission",
@@ -154,7 +154,7 @@ export const GALLERY_CARDS = [
       { label: "Location", val: "69.37°S Lunar South" },
       { label: "Rover Distance", val: "100+ Meters Traversed" },
     ],
-    accent: "gold",
+    accent: "saffron",
   },
   {
     id: "mom-card",
@@ -168,7 +168,7 @@ export const GALLERY_CARDS = [
       { label: "Cost", val: "$74 Million (World Record)" },
       { label: "Orbit Insertion", val: "100% 1st Try Success" },
     ],
-    accent: "cyan",
+    accent: "green",
   },
   {
     id: "aditya-card",
@@ -182,7 +182,7 @@ export const GALLERY_CARDS = [
       { label: "Payloads", val: "7 Remote Sensing & In-situ" },
       { label: "Distance", val: "1.5 Million KM" },
     ],
-    accent: "cyan",
+    accent: "chakra",
   },
   {
     id: "gaganyaan-card",
@@ -196,7 +196,7 @@ export const GALLERY_CARDS = [
       { label: "Orbit Height", val: "400 KM LEO" },
       { label: "Trial Robot", val: "Vyommitra Humanoid" },
     ],
-    accent: "gold",
+    accent: "saffron",
   },
 ];
 
@@ -208,7 +208,7 @@ export const VISION_2047 = [
     subtitle: "India's Independent Space Station",
     description: "A multi-module orbital station providing a permanent Indian human presence in space for microgravity research, space medicine, and deep-space staging.",
     icon: "Building2",
-    accent: "cyan",
+    accent: "chakra",
   },
   {
     id: "lunar-landing",
@@ -217,7 +217,7 @@ export const VISION_2047 = [
     subtitle: "Indian Astronaut on the Lunar Surface",
     description: "Targeted landing of Indian astronauts on the Moon, returning safely to Earth using indigenous heavy-lift launch vehicles and lunar ascent modules.",
     icon: "Footprints",
-    accent: "gold",
+    accent: "saffron",
   },
   {
     id: "chandrayaan-4",
@@ -226,7 +226,7 @@ export const VISION_2047 = [
     subtitle: "Bringing Lunar Dust Back to Earth",
     description: "A complex multi-stage mission to collect lunar soil and rock samples from the Moon's South Pole and return them safely to Indian laboratories for analysis.",
     icon: "PackageCheck",
-    accent: "gold",
+    accent: "green",
   },
   {
     id: "shukrayaan",
@@ -235,7 +235,7 @@ export const VISION_2047 = [
     subtitle: "Exploring Earth's Twin Planet",
     description: "Orbiter mission to study Venusian atmospheric chemistry, dense clouds, surface radar mapping, and solar wind interaction around Venus.",
     icon: "Sparkles",
-    accent: "cyan",
+    accent: "saffron",
   },
   {
     id: "nglv-rocket",
@@ -244,6 +244,6 @@ export const VISION_2047 = [
     subtitle: "Heavy-Lift Reusable Rocket Tech",
     description: "Developing 'Soorya' NGLV with modular semi-cryogenic & green propulsion capable of carrying up to 30 tonnes to LEO with reusable booster stages.",
     icon: "Flame",
-    accent: "cyan",
+    accent: "green",
   },
 ];

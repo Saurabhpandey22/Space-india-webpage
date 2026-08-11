@@ -42,32 +42,36 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-space-950/85 backdrop-blur-md border-b border-space-800 shadow-lg py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-space-950/90 backdrop-blur-md border-b border-space-800 shadow-lg py-3'
+          : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Tiranga Tricolor Bar */}
+      <div className="h-1 w-full tiranga-stripe-glow absolute top-0 left-0 right-0 z-50" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1">
         <div className="flex items-center justify-between">
           {/* Logo Brand */}
           <a
             href="#hero"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-space-850 border border-cyan-accent/30 flex items-center justify-center group-hover:border-cyan-accent group-hover:shadow-cyan-glow transition-all duration-300">
-              <Rocket className="w-5 h-5 text-cyan-accent group-hover:rotate-12 transition-transform duration-300" />
+            <div className="w-10 h-10 rounded-xl bg-space-850 border border-tiranga-saffron/40 flex items-center justify-center group-hover:border-tiranga-greenGlow group-hover:shadow-saffron-glow transition-all duration-300 relative overflow-hidden">
+              <Rocket className="w-5 h-5 text-tiranga-saffron group-hover:rotate-12 transition-transform duration-300 relative z-10" />
+              <div className="absolute inset-0 opacity-20 bg-gradient-to-tr from-tiranga-saffron via-white to-tiranga-greenGlow" />
             </div>
             <div>
-              <span className="font-extrabold text-lg tracking-wide text-slate-100 flex items-center gap-1.5 font-sans">
-                ISRO <span className="text-cyan-accent font-normal">SPACE TECH</span>
+              <span className="font-extrabold text-lg tracking-wide text-white flex items-center gap-1.5 font-sans">
+                ISRO <span className="text-gradient-tiranga font-black">SPACE TECH</span>
               </span>
-              <span className="block text-[10px] tracking-widest uppercase text-amber-accent font-semibold">
-                ISRO Missions & Beyond
+              <span className="block text-[10px] tracking-widest uppercase text-tiranga-saffron font-bold flex items-center gap-1">
+                <span>🇮🇳</span> BHARAT'S SPACE MISSION
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-space-850/60 p-1.5 rounded-full border border-space-700/60 backdrop-blur-sm">
+          <nav className="hidden md:flex items-center gap-1 bg-space-850/80 p-1.5 rounded-full border border-space-700/80 backdrop-blur-md shadow-cosmic-card">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -76,8 +80,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                     isActive
-                      ? 'bg-cyan-accent text-space-950 shadow-cyan-glow font-semibold'
-                      : 'text-slate-300 hover:text-slate-100 hover:bg-space-800/60'
+                      ? 'bg-gradient-to-r from-tiranga-saffron via-white to-tiranga-greenGlow text-space-950 shadow-saffron-glow font-bold scale-105'
+                      : 'text-slate-300 hover:text-white hover:bg-space-800/60'
                   }`}
                 >
                   {item.label}
@@ -90,7 +94,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <a
               href="#timeline"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-space-950 bg-amber-accent hover:bg-amber-400 rounded-lg shadow-amber-glow transition-all duration-300 transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-black uppercase tracking-wider text-space-950 bg-gradient-to-r from-tiranga-saffron via-amber-400 to-tiranga-greenGlow hover:opacity-90 rounded-xl shadow-saffron-glow transition-all duration-300 transform hover:-translate-y-0.5"
             >
               <Compass className="w-4 h-4" />
               Explore Journey

@@ -27,12 +27,14 @@ export default function StarfieldCanvas() {
 
     function initStars() {
       stars = [];
+      const palette = ['#FF7722', '#FFFFFF', '#10B981', '#3B82F6', '#00F0FF'];
       for (let i = 0; i < numStars; i++) {
+        const chosenColor = palette[Math.floor(Math.random() * palette.length)];
         stars.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 1.4 + 0.3,
-          color: Math.random() > 0.8 ? '#F2B441' : (Math.random() > 0.4 ? '#61DAFB' : '#FFFFFF'),
+          radius: Math.random() * 1.5 + 0.3,
+          color: chosenColor,
           alpha: Math.random() * 0.8 + 0.2,
           speed: Math.random() * 0.015 + 0.005,
           twinkleFactor: Math.random() * 0.05,

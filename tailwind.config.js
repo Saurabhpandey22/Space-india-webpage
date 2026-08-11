@@ -14,12 +14,22 @@ export default {
           800: '#1A243B', // Card hover / border background
           700: '#263554', // Border muted stroke
         },
+        tiranga: {
+          saffron: '#FF671F',
+          saffronGlow: '#FF7722',
+          white: '#FFFFFF',
+          green: '#046A38',
+          greenGlow: '#10B981',
+          chakra: '#000080',
+          chakraBlue: '#1E3A8A',
+          chakraLight: '#2563EB',
+        },
         cyan: {
-          accent: '#61DAFB',
+          accent: '#00F0FF',
           glow: '#00F0FF',
         },
         amber: {
-          accent: '#F2B441',
+          accent: '#FF7722',
           gold: '#F59E0B',
         }
       },
@@ -27,14 +37,18 @@ export default {
         sans: ['Inter', 'Poppins', 'sans-serif'],
       },
       boxShadow: {
-        'cyan-glow': '0 0 25px -5px rgba(97, 218, 251, 0.3)',
-        'amber-glow': '0 0 25px -5px rgba(242, 180, 65, 0.3)',
-        'cosmic-card': '0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
+        'cyan-glow': '0 0 25px -5px rgba(0, 240, 255, 0.35)',
+        'amber-glow': '0 0 25px -5px rgba(255, 119, 34, 0.35)',
+        'saffron-glow': '0 0 25px -5px rgba(255, 103, 31, 0.4)',
+        'green-glow': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
+        'chakra-glow': '0 0 25px -5px rgba(37, 99, 235, 0.4)',
+        'cosmic-card': '0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'orbit': 'orbit 20s linear infinite',
         'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 30s linear infinite',
       },
       keyframes: {
         orbit: {

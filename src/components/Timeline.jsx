@@ -14,14 +14,17 @@ export default function Timeline() {
 
   return (
     <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Section Divider Line */}
+      <div className="w-full max-w-5xl mx-auto h-0.5 tiranga-stripe opacity-40 mb-16 rounded-full" />
+
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-cyan-accent block mb-2">
-            Chronological Achievements
+          <span className="text-xs uppercase font-extrabold tracking-widest text-tiranga-saffron block mb-2">
+            Chronological Achievements • 🇮🇳 Space History
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-            ISRO Mission <span className="text-gradient-gold">Timeline</span>
+            ISRO Mission <span className="text-gradient-tiranga">Timeline</span>
           </h2>
           <p className="text-slate-300 text-base font-light">
             Tracing India's remarkable journey from launching our first satellite in 1975 to landing on the Moon's South Pole and pioneering solar science.
@@ -29,14 +32,14 @@ export default function Timeline() {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-2 mb-16">
+        <div className="flex items-center justify-center flex-wrap gap-2.5 mb-16">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all duration-300 ${
+              className={`px-5 py-2.5 text-xs sm:text-sm font-extrabold rounded-full border transition-all duration-300 ${
                 selectedCategory === cat
-                  ? 'bg-cyan-accent text-space-950 border-cyan-accent shadow-cyan-glow font-bold'
+                  ? 'bg-gradient-to-r from-tiranga-saffron via-white to-tiranga-greenGlow text-space-950 border-transparent shadow-saffron-glow font-black scale-105'
                   : 'bg-space-850/80 text-slate-300 border-space-700 hover:border-slate-500 hover:text-white'
               }`}
             >
@@ -47,14 +50,34 @@ export default function Timeline() {
 
         {/* Timeline Path & Cards Container */}
         <div className="relative">
-          {/* Central Glowing Timeline Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-accent via-cyan-accent to-amber-accent opacity-50 shadow-cyan-glow" />
+          {/* Central Glowing Tiranga Timeline Line */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-tiranga-saffron via-white to-tiranga-greenGlow opacity-70 shadow-saffron-glow" />
 
           {/* Missions List */}
           <div className="space-y-12 md:space-y-16">
             {filteredMissions.map((mission, index) => {
               const isEven = index % 2 === 0;
-              const isGold = mission.accent === 'gold';
+              const isSaffron = mission.accent === 'saffron';
+              const isGreen = mission.accent === 'green';
+              const isChakra = mission.accent === 'chakra';
+
+              const borderHover = isSaffron
+                ? 'hover:border-tiranga-saffron/60 hover:shadow-saffron-glow'
+                : isGreen
+                ? 'hover:border-tiranga-greenGlow/60 hover:shadow-green-glow'
+                : 'hover:border-tiranga-chakraLight/60 hover:shadow-chakra-glow';
+
+              const badgeStyle = isSaffron
+                ? 'bg-tiranga-saffron/15 border-tiranga-saffron/40 text-tiranga-saffron'
+                : isGreen
+                ? 'bg-tiranga-greenGlow/15 border-tiranga-greenGlow/40 text-tiranga-greenGlow'
+                : 'bg-tiranga-chakraLight/15 border-tiranga-chakraLight/40 text-tiranga-chakraLight';
+
+              const dotBorder = isSaffron
+                ? 'border-tiranga-saffron shadow-saffron-glow'
+                : isGreen
+                ? 'border-tiranga-greenGlow shadow-green-glow'
+                : 'border-tiranga-chakraLight shadow-chakra-glow';
 
               return (
                 <div
@@ -64,8 +87,8 @@ export default function Timeline() {
                   }`}
                 >
                   {/* Timeline Dot Badge */}
-                  <div className="z-20 flex items-center justify-center w-12 h-12 rounded-full bg-space-950 border-2 border-cyan-accent shadow-cyan-glow my-4 md:my-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-                    <span className="text-xs font-extrabold text-white">
+                  <div className={`z-20 flex items-center justify-center w-12 h-12 rounded-full bg-space-950 border-2 ${dotBorder} my-4 md:my-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}>
+                    <span className="text-xs font-black text-white">
                       {mission.year.substring(0, 4)}
                     </span>
                   </div>
@@ -73,35 +96,27 @@ export default function Timeline() {
                   {/* Card Content Side */}
                   <div className="w-full md:w-[calc(50%-2.5rem)]">
                     <div
-                      className={`glass-panel p-6 sm:p-8 rounded-2xl border transition-all duration-300 group hover:-translate-y-1.5 ${
-                        isGold
-                          ? 'border-space-700 hover:border-amber-accent/60 hover:shadow-amber-glow'
-                          : 'border-space-700 hover:border-cyan-accent/60 hover:shadow-cyan-glow'
-                      }`}
+                      className={`glass-panel p-6 sm:p-8 rounded-3xl border border-space-700 transition-all duration-300 group hover:-translate-y-1.5 ${borderHover}`}
                     >
                       {/* Header Badge & Date */}
                       <div className="flex items-center justify-between gap-2 mb-3">
                         <div className="flex items-center gap-2">
                           <span
-                            className={`text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${
-                              isGold
-                                ? 'bg-amber-accent/10 border-amber-accent/40 text-amber-accent'
-                                : 'bg-cyan-accent/10 border-cyan-accent/40 text-cyan-accent'
-                            }`}
+                            className={`text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full border ${badgeStyle}`}
                           >
                             {mission.category}
                           </span>
                           <span className="text-xs font-semibold text-slate-400 flex items-center gap-1">
-                            <Calendar className="w-3 h-3 text-slate-400" />
+                            <Calendar className="w-3.5 h-3.5 text-slate-400" />
                             {mission.date}
                           </span>
                         </div>
 
                         <span
-                          className={`text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1 ${
+                          className={`text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 ${
                             mission.status === 'Active' || mission.status === 'Completed'
-                              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                              : 'bg-amber-500/10 text-amber-300 border border-amber-500/30'
+                              ? 'bg-tiranga-greenGlow/15 text-tiranga-greenGlow border border-tiranga-greenGlow/40'
+                              : 'bg-tiranga-saffron/15 text-tiranga-saffron border border-tiranga-saffron/40'
                           }`}
                         >
                           {mission.status === 'Active' || mission.status === 'Completed' ? (
@@ -114,10 +129,10 @@ export default function Timeline() {
                       </div>
 
                       {/* Mission Title */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 group-hover:text-cyan-accent transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-tiranga-saffron transition-colors">
                         {mission.title}
                       </h3>
-                      <p className="text-xs font-semibold text-amber-accent mb-3">
+                      <p className="text-xs font-bold text-tiranga-saffron mb-3">
                         {mission.tagline}
                       </p>
 
@@ -129,13 +144,13 @@ export default function Timeline() {
                       {/* Launch Vehicle & Action */}
                       <div className="pt-4 border-t border-space-800 flex items-center justify-between text-xs">
                         <span className="text-slate-400 flex items-center gap-1.5 font-medium">
-                          <Rocket className="w-3.5 h-3.5 text-cyan-accent" />
+                          <Rocket className="w-3.5 h-3.5 text-tiranga-saffron" />
                           Vehicle: <strong className="text-slate-200">{mission.vehicle}</strong>
                         </span>
 
                         <button
                           onClick={() => setActiveMission(mission)}
-                          className="inline-flex items-center gap-1 text-cyan-accent hover:text-cyan-300 font-bold focus:outline-none"
+                          className="inline-flex items-center gap-1 text-tiranga-greenGlow hover:text-white font-bold focus:outline-none"
                         >
                           <Info className="w-3.5 h-3.5" />
                           Details
