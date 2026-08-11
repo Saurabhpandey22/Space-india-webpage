@@ -44,12 +44,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-tiranga-greenGlow/15 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Hero Content Container (Centered like Image 2) */}
-      <div className="relative max-w-5xl mx-auto text-center z-10 w-full">
-        {/* Top Gold Pill Badge (Exact match to Image 2 Badge Style) */}
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase mb-8 shadow-saffron-glow backdrop-blur-md">
-          <span className="text-tiranga-saffron font-extrabold">IN</span>
-          <span>THEMATIC WEBSITE DEVELOPMENT COMPETITION 2026</span>
-        </div>
+      <div className="relative max-w-5xl mx-auto text-center z-10 w-full pt-6">
 
         {/* Main Heading (Exact Font, Structure & Tiranga Colors as Image 2) */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif-heading font-black tracking-tight mb-8 leading-[1.18]">
