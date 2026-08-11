@@ -85,14 +85,14 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Bottom Key Stats Row (Exact match to Image 2 Footer Stats Bar) */}
+        {/* Bottom Key Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-space-800/80 max-w-4xl mx-auto">
           <div className="text-center">
             <span className="block text-2xl sm:text-3xl font-black font-serif-heading text-amber-400">
-              16 Aug
+              1st
             </span>
             <span className="block text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-slate-400 uppercase mt-1">
-              COMPETITION DAY
+              LUNAR SOUTH POLE
             </span>
           </div>
 
@@ -107,19 +107,19 @@ export default function Hero() {
 
           <div className="text-center">
             <span className="block text-2xl sm:text-3xl font-black font-serif-heading text-amber-400">
-              1st
+              430+
             </span>
             <span className="block text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-slate-400 uppercase mt-1">
-              MARS ORBIT ATTEMPT
+              FOREIGN SATELLITES
             </span>
           </div>
 
           <div className="text-center">
             <span className="block text-2xl sm:text-3xl font-black font-serif-heading text-amber-400">
-              75 yrs
+              1969
             </span>
             <span className="block text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-slate-400 uppercase mt-1">
-              OF INDEPENDENCE
+              ESTABLISHED YEAR
             </span>
           </div>
         </div>
