@@ -35,13 +35,14 @@ export default function Hero() {
           <span className="text-gradient-tiranga">BHARAT IN SPACE • ISRO MISSIONS & BEYOND</span>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-6 font-sans leading-[1.15]">
-          India's Journey to the{' '}
-          <span className="text-gradient-tiranga relative inline-block">
+        {/* Main Heading in Exact Indian Tiranga Colors (Saffron - White - Green) */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 font-sans leading-[1.15]">
+          <span className="text-tiranga-saffron drop-shadow-[0_0_25px_rgba(255,103,31,0.7)]">India's</span>{' '}
+          <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Journey to the</span>{' '}
+          <span className="text-tiranga-greenGlow drop-shadow-[0_0_25px_rgba(16,185,129,0.7)] relative inline-block">
             Stars
             <svg
-              className="absolute -bottom-2 left-0 w-full h-3 text-tiranga-saffron opacity-80"
+              className="absolute -bottom-2 left-0 w-full h-3 text-tiranga-greenGlow opacity-90"
               viewBox="0 0 100 20"
               preserveAspectRatio="none"
             >
@@ -71,6 +72,45 @@ export default function Hero() {
             <Orbit className="w-5 h-5 text-tiranga-greenGlow" />
             Vision 2047 Objectives
           </a>
+        </div>
+
+        {/* Independence Day Special Ashoka Chakra Emblem under Explore Mission Timeline */}
+        <div className="mt-12 flex flex-col items-center justify-center animate-float">
+          <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
+            {/* Outer Tiranga Tricolor Rotating Ring */}
+            <div className="absolute inset-0 rounded-full p-1.5 bg-gradient-to-tr from-tiranga-saffron via-white to-tiranga-greenGlow shadow-saffron-glow animate-spin-slow opacity-95" />
+            <div className="absolute inset-2.5 rounded-full bg-space-950/95 backdrop-blur-md flex items-center justify-center border border-space-700 shadow-inner">
+              {/* 24-Spoked Ashoka Chakra SVG Emblem */}
+              <svg className="w-24 h-24 sm:w-28 sm:h-28 text-tiranga-chakraLight animate-spin-slow" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#2563EB" strokeWidth="2.5" />
+                <circle cx="50" cy="50" r="8" fill="none" stroke="#2563EB" strokeWidth="2" />
+                <circle cx="50" cy="50" r="3" fill="#2563EB" />
+                {Array.from({ length: 24 }).map((_, i) => {
+                  const angle = (i * 15 * Math.PI) / 180;
+                  const x1 = 50 + 8 * Math.cos(angle);
+                  const y1 = 50 + 8 * Math.sin(angle);
+                  const x2 = 50 + 45 * Math.cos(angle);
+                  const y2 = 50 + 45 * Math.sin(angle);
+                  return (
+                    <line
+                      key={i}
+                      x1={x1}
+                      y1={y1}
+                      x2={x2}
+                      y2={y2}
+                      stroke="#2563EB"
+                      strokeWidth="1.5"
+                    />
+                  );
+                })}
+              </svg>
+            </div>
+          </div>
+          <div className="mt-4 flex items-center gap-2 px-4 py-1.5 rounded-full bg-space-850/90 border border-tiranga-saffron/40 text-xs font-black uppercase text-white shadow-saffron-glow backdrop-blur-md">
+            <span className="text-tiranga-saffron font-black">24-SPOKED</span>
+            <span className="text-white">ASHOKA CHAKRA</span>
+            <span className="text-tiranga-greenGlow font-black">• INDEPENDENCE DAY SPECIAL 🇮🇳</span>
+          </div>
         </div>
       </div>
 
